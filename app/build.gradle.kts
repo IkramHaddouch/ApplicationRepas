@@ -1,11 +1,16 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
+
 }
 
 android {
     namespace = "com.example.monapplicationrepas"
     compileSdk = 34
+    buildFeatures{
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "com.example.monapplicationrepas"
@@ -46,5 +51,16 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.25")
+
+    var room_version = "2.5.2"
+
+    implementation("androidx.room:room-runtime:$room_version")
+
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+
+
 
 }
