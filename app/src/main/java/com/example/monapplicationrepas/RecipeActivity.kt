@@ -66,7 +66,7 @@ class RecipeActivity : AppCompatActivity() {
                 binding.itemImage.scaleType=ImageView.ScaleType.CENTER_CROP
                 Glide.with(this).load(intent.getStringExtra("img")).into(binding.itemImage)
                 binding.fullScreen.setColorFilter(null)
-                binding.shade.visibility=View.GONE
+                binding.shade.visibility=View.VISIBLE
                 imgCrop=!imgCrop
             }
         }
